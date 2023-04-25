@@ -1,0 +1,22 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - CALL Project</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>CALL Project</h1>
+    {% if g.user %}
+      <span>{{ g.user['username'] }}</span>
+        <a href="{{ url_for('auth.logout') }}"><button class="button">Log Out</button></a>
+{#    {% else %}#}
+{#      <a href="{{ url_for('auth.register') }}"><button class="button">Register</button></a>#}
+{#      <a href="{{ url_for('auth.login') }}"><button class="button">Log In</button></a>#}
+    {% endif %}
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>

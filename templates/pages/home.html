@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Welcome{% endblock %}</h1>
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <section class="mainContent">
+        <div>
+            <p>{{ content }}</p>
+        </div>
+
+        <div class="questionContainer">
+            {% for question in questions %}
+                <div class="question">
+                    {{ question }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="suggestionContainerOuter">
+            <div id="suggestionContainer" class="suggestionContainer content--hidden">
+                {% for suggestion in suggestions %}
+                    <div class="suggestion">
+                        {{ suggestion }}
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="button" onclick="toggleSuggestions()">Toggle Suggestions</button>
+        </div>
+
+
+        <form method="post">
+            <label class="guessLabel" for="guess">Type a word that could fit in these gaps:</label>
+            <br/>
+            <input type="text" name="guess" id="guess" required>
+            <input class="button" type="submit" value="Submit">
+        </form>
+    </section>
+{% endblock %}

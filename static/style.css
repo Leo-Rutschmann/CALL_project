@@ -1,0 +1,138 @@
+/*html { font-family: sans-serif; background: #eee; padding: 1rem; }*/
+/*body { max-width: 960px; margin: 0 auto; background: white; }*/
+/*h1 { font-family: serif; color: #377ba8; margin: 1rem 0; }*/
+/*a { color: #377ba8; }*/
+/*hr { border: none; border-top: 1px solid lightgray; }*/
+/*nav { background: lightgray; display: flex; align-items: center; padding: 0 0.5rem; }*/
+/*nav h1 { flex: auto; margin: 0; }*/
+/*nav h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }*/
+/*nav ul  { display: flex; list-style: none; margin: 0; padding: 0; }*/
+/*nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }*/
+/*.content { padding: 0 1rem 1rem; }*/
+/*.content > header { border-bottom: 1px solid lightgray; display: flex; align-items: flex-end; }*/
+/*.content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }*/
+/*.flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 1px solid #377ba8; }*/
+/*.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }*/
+/*.post > header > div:first-of-type { flex: auto; }*/
+/*.post > header h1 { font-size: 1.5em; margin-bottom: 0; }*/
+/*.post .about { color: slategray; font-style: italic; }*/
+/*.post .body { white-space: pre-line; }*/
+/*.content:last-child { margin-bottom: 0; }*/
+/*.content form { margin: 1em 0; display: flex; flex-direction: column; }*/
+/*.content label { font-weight: bold; margin-bottom: 0.5em; }*/
+/*.content input, .content textarea { margin-bottom: 1em; }*/
+/*.content textarea { min-height: 12em; resize: vertical; }*/
+/*input.danger { color: #cc2f2e; }*/
+/*input[type=submit] { align-self: start; min-width: 10em; }*/
+:root {
+  --colorText: #fff;
+  --colorAccent: #1e90ff;
+  --colorAccentDark: #0d62b3;
+  --colorBGAccent: rgba(40,144,255,.5);
+}
+
+body {
+    background-image: url("images/background.svg");
+    background-size: cover;
+    color: var(--colorText);
+}
+
+a {
+    padding-top: .25rem;
+    padding-right: .25rem;
+    color: var(--colorAccent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--colorText);
+    font-weight: bold;
+}
+
+input[type=button], input[type=submit], input[type=reset], button {
+    border: none;
+}
+
+input[type=text], input[type=password] {
+    padding: 1rem .5rem;
+}
+
+.leftSide {
+    max-width: 500px;
+    padding: 1rem;
+    background-color: var(--colorBGAccent);
+}
+
+.rightSide {
+    padding: 1rem;
+}
+
+.mainContent {
+    padding: 1rem;
+    background-color: var(--colorBGAccent);
+    min-height: 500px;
+}
+
+.button {
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--colorAccent);
+    background-image: linear-gradient(var(--colorAccent),var(--colorAccentDark));
+    box-shadow: 0 0 3px var(--colorAccentDark);
+}
+
+.button:hover {
+    background-color: var(--colorAccent);
+    color: var(--colorText);
+    filter: opacity(.9);
+}
+
+.button:active {
+    background-color: var(--colorAccentDark);
+}
+
+.loginForm {
+    display: grid;
+}
+
+.guessLabel {
+    font-size: 1.4rem;
+}
+
+.questionContainer {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.suggestionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .7rem;
+}
+
+.suggestionContainerOuter {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.question {
+    font-size: 1.4rem;
+}
+.suggestion {
+    font-weight: bold;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.suggestion:hover {
+    color: var(--colorAccent);
+}
+
+.content--hidden {
+    display: none;
+    visibility: collapse;
+    height: 0;
+}
