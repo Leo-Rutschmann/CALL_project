@@ -31,7 +31,18 @@
   --colorBGAccent: rgba(40,144,255,.5);
 }
 
+@font-face {
+    font-family: "Comme";
+    src: url("/static/Comme-Regular.ttf");
+}
+
+@font-face {
+    font-family: "YuseiMagic";
+    src: url("/static/YuseiMagic-Regular.ttf");
+}
+
 body {
+    font-family: "Comme";
     background-image: url("images/background.svg");
     background-size: cover;
     color: var(--colorText);
@@ -73,6 +84,46 @@ input[type=text], input[type=password] {
     min-height: 500px;
 }
 
+.mainTitle {
+    font-family: "YuseiMagic";
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.centered {
+    text-align: center;
+}
+
+.big {
+    font-size: 1.4rem;
+}
+
+.interTitle {
+    color: var(--colorAccent);
+    padding-bottom: 1rem;
+}
+
+.finishButton {
+    padding-top: 2rem;
+}
+
+.levelSelect {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainTitle:hover {
+    color: var(--colorAccent);
+}
+
+.score {
+    font-family: "YuseiMagic";
+    font-size: 2rem;
+}
+
 .button {
     margin-top: 1rem;
     padding: 1rem 1.5rem;
@@ -85,7 +136,7 @@ input[type=text], input[type=password] {
 .button:hover {
     background-color: var(--colorAccent);
     color: var(--colorText);
-    filter: opacity(.9);
+    filter: opacity(.8);
 }
 
 .button:active {
@@ -120,11 +171,19 @@ input[type=text], input[type=password] {
 
 .question {
     font-size: 1.4rem;
+    padding: .5rem;
 }
 .suggestion {
     font-weight: bold;
     padding: 1rem;
     font-size: 1.2rem;
+}
+
+.levelSelect input {
+  padding: 1.4rem 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #cec;
 }
 
 .suggestion:hover {

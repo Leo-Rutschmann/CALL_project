@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {% if currentPoints %}
+        <h2>Your Points: {{ currentPoints }}</h2>
+    {% endif %}
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <section class="mainContent">
+        <div id="questionWrapper">
+            <h1 class="big interTitle">{% block title %}Guess the Word:{% endblock %}</h1>
+
+{#            {% if guessed %}#}
+{##}
+{#                <div>#}
+{#                    <p>You received {{ thisRoundPoints }} Points!</p>#}
+{#                </div>#}
+{##}
+{#            {% endif %}#}
+
+            {% if not finished %}
+{#                {% if nextGuess %}#}
+
+                    <div class="questionContainer">
+                        {% for question in questions %}
+                            <div class="question">
+                                {{ question }}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {#                    <div class="suggestionContainerOuter">#}
+                    {#                        <div id="suggestionContainer" class="suggestionContainer content--hidden">#}
+                    {#                            {% for suggestion in suggestions %}#}
+                    {#                                <div class="suggestion">#}
+                    {#                                    {{ suggestion }}#}
+                    {#                                </div>#}
+                    {#                            {% endfor %}#}
+                    {#                        </div>#}
+                    {#                        <button class="button" onclick="toggleSuggestions()">Toggle Suggestions</button>#}
+                    {#                    </div>#}
+                    </div>
+
+
+                    <div id="revealContainer" class="revealContainer content--hidden">
+                        <h3>The correct answer was: <span id="correctAnswerSpan">{{ target }}!</span></h3>
+                    </div>
+
+                    <br/>
+                    <form method="GET">
+                        <label id="guessLabel" class="guessLabel" for="guess">Type a word that could fit in these
+                            gaps:</label>
+                        <br/>
+                        <input id="guessInputField" type="text" name="guess" id="guess" required>
+                        <input class="content--hidden" name="level" value="{{ level }}">
+                        <input class="content--hidden" name="currentPoints" value="{{ currentPoints }}">
+                        <input class="content--hidden" name="status" value="{{ status }}">
+                        <input class="content--hidden" name="target" value="{{ target }}">
+                        <input id="submitAnswerButton" class="button" type="button" onclick="takeAnswer()"
+                               value="Submit">
+                        <input id="proceedButton" class="button content--hidden" type="submit" name="proceed"
+                               value="Proceed">
+                    </form>
+
+{#                {% endif %}#}
+            {% else %}
+
+                <div>
+                    <p>{{ status }} rounds are over!</p>
+                    <br/>
+                    <p style="font-size: 1.8rem">Your score is: </p>
+                    <p class="score">{{ currentPoints }} points!</p>
+                </div>
+
+            {% endif %}
+        {#        <div id="revealContainer" class="revealContainer">#}
+        {#            <h3>The correct answer was: {{ target }}</h3>#}
+        {#            <form method="GET">#}
+        {#                        <input id="guessInputField" type="text" name="guess" id="guess" required>#}
+        {#                        <input class="content--hidden" name="level" value="{{ level }}">#}
+        {#                        <input class="content--hidden" name="currentPoints" value="{{ currentPoints }}">#}
+        {#                        <input class="content--hidden" name="status" value="{{ status }}">#}
+        {#                        <input class="content--hidden" name="proceed" value="proceed">#}
+        {#                        <input class="button" type="submit" value="Submit">#}
+        {#                        <input class="button" type="submit" name="finish" value="Proceed">#}
+        {#                    </form>#}
+        {#        </div>#}
+        <div class="finishButton">
+            <input class="button" type="submit" onclick="window.location = '/'" name="finish" value="Finish">
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1 class="centered">{% block title %}Welcome{% endblock %}</h1>
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <section class="mainContent">
+
+        <form method="GET" action="{{ url_for('question') }}">
+            <div>
+                <p class="centered big">Choose your level:</p>
+
+            </div>
+            {# TODO level select #}
+            <div class="levelSelect">
+                {% for level in levels %}
+                    <input name="level" type="submit" class="button" value="{{ level }}"{{ level }}>
+                {% endfor %}
+            </div>
+        </form>
+    </section>
+{% endblock %}

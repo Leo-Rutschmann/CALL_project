@@ -2,7 +2,7 @@
 <title>{% block title %}{% endblock %} - CALL Project</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <nav>
-  <h1>CALL Project</h1>
+  <a href="/"><h1 class="mainTitle">Word Gap Wizard</h1></a>
     {% if g.user %}
       <span>{{ g.user['username'] }}</span>
         <a href="{{ url_for('auth.logout') }}"><button class="button">Log Out</button></a>
