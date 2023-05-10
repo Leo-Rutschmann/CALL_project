@@ -4,7 +4,11 @@ import spacy
 nlp = spacy.load('en_core_web_md')
 
 
+<<<<<<< HEAD
 def calculateUserScore(userWord, targetWord):
+=======
+def calcaulator(userWord, targetWord):
+>>>>>>> a0b135bc5b75913a5c0c91420b81aa6c031169b3
     # get word vectors for userWord and targetWord
     userVec = nlp(userWord).vector
     targetVec = nlp(targetWord).vector
@@ -21,9 +25,14 @@ def calculateUserScore(userWord, targetWord):
     return distance_score
 
 
+<<<<<<< HEAD
 distance_score = calculateUserScore("cat", "dog")
 distance_score = calculateUserScore("bark", "dog")
 distance_score = calculateUserScore("dog", "dog")
 print(abs(round(float("2"[:4]), 3)))
 print(calculateUserScore("cat", "television"))
 print(calculateUserScore("television", "television"))
+=======
+distance_score = calcaulator("cat", "dog")
+print(distance_score)
+>>>>>>> a0b135bc5b75913a5c0c91420b81aa6c031169b3

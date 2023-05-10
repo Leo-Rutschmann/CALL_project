@@ -32,4 +32,8 @@ corpusObject = json.loads(corpusJsonString)
 print("\n")
 print("Test whole corpus:")
 for sentence in corpusObject:
+<<<<<<< HEAD
     print(sentence["sentence"] + ", " + sentence["level"])
+=======
+    print(sentence["sentence"] + ", " + sentence["level"])
+>>>>>>> a0b135bc5b75913a5c0c91420b81aa6c031169b3
